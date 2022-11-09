@@ -51,9 +51,9 @@
         box-sizing: border-box;
 }
 html {
-        text-align: center;
-        font-family: 'Source Sans Pro', sans-serif;
         font-size: 1rem;
+        font-family: 'Roboto Slab', serif;
+        color: #00515D;
 }
 @media screen and (min-width:768px) {
         html {
@@ -73,13 +73,57 @@ html {
 
 
 /* ----- TYPOGRAPHY ----- */ 
-
-
+nav {
+        text-align: center;
+}
+ul {
+        list-style: none;
+}
+li {
+        padding: 5px;
+        display: inline-block;
+}
+li:hover {
+        background-color: #FFD8DB;
+        border-radius: 20px;
+}
+a {
+        color: #00B0A3;
+        text-decoration: none;
+}
+a:hover {
+        color: #00515D;
+}
+h1 {
+        font-size: 2.5rem;
+        font-family: 'Pacifico';
+        color: #00B0A3;
+}
+h2 {
+        font-size: 1.5rem;
+        font-family: 'Pacifico';
+        color: #00B0A3;
+}
+h3 {
+        font-size: 1rem;
+        font-family: 'Roboto Slab', serif;
+        color: #00B0A3;
+}
+h4 {
+        font-size: .8rem;
+        font-family: 'Open Sans', sans-serif;
+        color: #00515D;
+}
+p {
+        line-height: 1.8em;
+}
 
 
 
 @media screen and (min-width:768px) {
-
+        nav{
+                text-align: right;
+        }
 }
 
 @media screen and (min-width:1024px){
@@ -104,6 +148,12 @@ html {
 }
 [class*="col-"] {
         padding: .5em .5em ;
+}
+#pos-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #FFF;
 }
 
 .col-sm-1 {
@@ -245,6 +295,17 @@ html {
 
 
 /* ----- CONTENT ----- */
+
+#pos-fixed + div {
+        background-color: #FFD8DB;
+
+}
+#bg-image {
+        text-align: center;
+        padding: 2em 0em;
+        margin-top: 6em;
+}
+
 
 @media screen and (min-width:768px) {
 
