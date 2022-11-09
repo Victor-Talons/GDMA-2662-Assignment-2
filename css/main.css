@@ -78,6 +78,7 @@ nav {
 }
 ul {
         list-style: none;
+        padding: 0;
 }
 li {
         padding: 5px;
@@ -95,7 +96,7 @@ a:hover {
         color: #00515D;
 }
 h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-family: 'Pacifico';
         color: #00B0A3;
 }
@@ -323,7 +324,12 @@ p {
 .col-center {
         justify-content: center;
 }
-
+[class*="fa"] {
+    font-size: 42px;
+}
+[class*="fa"] {
+        padding: 0px;
+    }
 
   /* ----- COLOR ----- */
 
