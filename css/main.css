@@ -73,24 +73,33 @@ html {
 /* ----- NAV ----- */ 
 nav {
         text-align: center;
+        padding: 0;
 }
 ul {
         list-style: none;
         padding: 0;
+        margin-top: 0;
 }
 footer ul {
         margin-top: 2em;
 }
 li {
-        padding: 5px;
+        padding-left: 5px;
         display: inline-block;
+        font-family: 'Open Sans', sans-serif;
 }
 footer li {
         display: block;
         margin-top: 1em;
 
 }
-li:hover {
+header li:hover {
+        background-color: #FFD8DB;
+        border-radius: 20px;
+        
+}
+footer a:hover {
+        padding: 3px;
         background-color: #FFD8DB;
         border-radius: 20px;
 }
@@ -101,28 +110,39 @@ a {
 a:hover {
         color: #00515D;
 }
-/* ----- TYPOGRAPHY ----- */ 
 
+
+/* ----- TYPOGRAPHY ----- */ 
+img {
+        padding: 0;
+}
 h1 {
-        font-size: 3rem;
+        font-size: 4rem;
         font-family: 'Pacifico';
+        font-weight: 200;
+        margin: 0;
         color: #00B0A3;
+        padding-top: 2em;
+        margin-bottom: 0.2em;
 }
 h2 {
         font-size: 2rem;
         font-family: 'Pacifico';
         color: #00B0A3;
+        margin: 0;
+        font-weight: lighter;
 }
 h3 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-family: 'Roboto Slab', serif;
         color: #00B0A3;
-        margin-bottom: 0;
+        margin: 0 0 0.2em 0;
 }
 h4 {
         font-size: .8rem;
         font-family: 'Open Sans', sans-serif;
         color: #00515D;
+        margin: 0;
 }
 p {
         line-height: 1.8em;
@@ -134,13 +154,17 @@ p+p {
 footer {
         border-top: 5px solid #FFD8DB;
 }
-
+footer .col-sm-4, footer .col-sm-8 {
+        margin: 0 auto;
+}
 
 
 @media screen and (min-width:768px) {
         nav{
-                text-align: right;
+                text-align: left;
         }
+       
+        
 }
 
 @media screen and (min-width:1024px){
@@ -307,6 +331,21 @@ footer {
 
 
 /* ----- CONTENT ----- */
+
+/* ----- SYSTEMS ----- */
+#systems {
+        margin: 2em 0em 4em 0em;
+}
+#systems .row:last-child section {
+        align-content: flex-start;
+}
+#systems .row:last-child section h3{
+        margin-bottom: .5em;
+}
+#systems .col-md-8 {
+        margin-bottom: 1em;
+}
+/* ----- Pos-fixed ----- */
 #pos-fixed {
         position: fixed;
         top: 0;
@@ -319,33 +358,58 @@ footer {
         background-color: #FFD8DB;
 
 }
+#pos-fixed .wrapper {
+        text-align: center;
+}
+#bg-image p {
+        padding-bottom: 6em;
+}
+/* ----- Bg-image ----- */
 #bg-image {
         text-align: center;
-        padding: 2em;
-        margin-top: 10em;
+        margin-top: 9em;
 }
-#systems .row:last-child section {
-        align-content: flex-start;
+/* ----- Layout ----- */
+#layout {
+        margin-bottom: 4em;
 }
 #layout > section:first-child {
         flex-direction: column;
         justify-content: center;
         background-color: #FFD8DB;
         text-align: center;
+        padding: 2em;
+        margin-bottom: 8em;
+}
+#layout .row:last-child section {
+        margin-top: 2em;
+}
+ h2 {
+        margin-bottom: .5em;
+}
+/* ----- Testing ----- */
+#testing {
+        margin-bottom: 4em;
 }
 #testing .col-lg-12:first-child {
         display: none;
 }
+/* ----- Benenfits ----- */
+#benefits {
+        margin-bottom: 2em;
+}
 #benefits {
         text-align: center;
+}
+[class*="fa"] {
+        padding: 0px;
+        font-size: xx-large;
 }
 
 
 @media screen and (min-width:768px) {
-        #bg-image {
-                text-align: center;
-                padding: 2em 0em;
-                margin-top: 6em;
+        #pos-fixed .wrapper {
+                text-align: left;
         }
         #systems{
                 text-align: center;
@@ -353,10 +417,36 @@ footer {
         #testing .col-lg-12:first-child {
                 display: block;
         }
+        #benefits .row :last-child {
+                text-align: left;
+        }
+        #benefits h3 {
+                margin: 0px;
+        }
+
 }
 
 @media screen and (min-width:1024px){
-      
+        #layout > section:first-child {
+                order: 1;
+        }
+        #benefits header:first-child {
+                margin: 0 auto;
+        }
+        #layout > section:first-child {
+                padding: 0em 2em;
+                margin-bottom: 0em;
+        }
+        [class*="fa"] {
+                font-size: 42px;
+            }
+        footer .wrapper {
+                display: flex;
+                justify-content: flex-start;
+        }
+        footer nav {
+                order: 1;
+        }
 }
 /*--
 /*--------------------------------------------------------------
@@ -367,12 +457,16 @@ footer {
 .col-center {
         justify-content: center;
 }
-[class*="fa"] {
-    font-size: 42px;
+
+
+#bg-image {
+        background: url(../img/balloons.jpg) no-repeat;
+        -o-background-siz: contain;
+        -ms-background-siz: contain;
+        -webkit-background-siz: contain;
+        -moz-background-siz: contain;
+        background-size: contain;
 }
-[class*="fa"] {
-        padding: 0px;
-    }
 
   /* ----- COLOR ----- */
 
