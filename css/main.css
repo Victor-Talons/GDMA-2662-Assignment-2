@@ -8,20 +8,18 @@
 3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc. 
 4.0 - Elements: styling for bare/generic HTML elements 
         -- Typography (Headlines, Paragraphs, Lists, Anchors)
-                *--- font-weight 
-                * --- font-size   
-                * --- style 
-                * --- line-height  
-                *--- margin 
+                
 5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
         - Framework
 6.0 - Components: specific designed components
-        -- Hero 
+        -- Grouped
         -- Nav
+        -- Hero
+        -- System
+        -- Layout
+        -- Testing
+        -- Benefits 
         -- Footer
-
-
-        
 7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
         - Screen Reader
 --------------------------------------------------------------*/
@@ -50,11 +48,13 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
 }
-html {
-        font-size: 1rem;
-        font-family: 'Roboto Slab', serif;
+html {                  /* Font-Shorthand */
+        /* font-size: 1rem;
+        font-family: 'Roboto Slab', serif; */
         color: #00515D;
+        font: 1rem 'Roboto Slab', serif;
 }
+
 @media screen and (min-width:768px) {
         html {
         
@@ -70,18 +70,20 @@ html {
 /*--------------------------------------------------------------
     4.0 - ELEMENTS
 -------------------------------------------------------------- */
-/* ----- NAV ----- */ 
+
+
+
+
 
 
 
 /* ----- TYPOGRAPHY ----- */ 
-
 img {
         padding: 0;
 }
 h1 {
         font-size: 4rem;
-        font-family: 'Pacifico';
+        font-family: 'Pacifico', cursive;
         font-weight: 200;
         margin: 0;
         color: #00B0A3;
@@ -89,11 +91,11 @@ h1 {
         margin-bottom: 0.2em;
 }
 h2 {
-        font-size: 2rem;
-        font-family: 'Pacifico';
+        font-size: 2.5rem;
+        font-family: 'Pacifico', cursive; 
         color: #00B0A3;
         margin: 0 0 .5em 0;
-        font-weight: lighter;
+        /* font-weight: lighter;   */
 }
 h3 {
         font-size: 1.5rem;
@@ -113,12 +115,9 @@ p {
 p+p {
         margin-top: 2em;
 }
-
-
 @media screen and (min-width:768px) {
 
 }
-
 @media screen and (min-width:1024px){
         h1 {
                 font-size: 5em;
@@ -126,14 +125,21 @@ p+p {
         h1 + div p {
                 font-size: 1.2em;
         }
-        footer nav,
-        footer h4,
-        footer p {
-                text-align: left;
-        }
-        footer li {
-                padding: none;
-        }
+}
+
+
+
+/* ----- ANCHOR ----- */
+a:hover {
+        padding: 5px;
+        background-color: #FFD8DB;
+        border-radius: 20px;
+        color: #00515D;
+}
+a {
+        padding: 5px;
+        color: #00B0A3;
+        text-decoration: none;
 }
 /*--------------------------------------------------------------
     5.0 - OBJECTS
@@ -298,7 +304,6 @@ p+p {
 #testing {
         margin-bottom: 4em;
 }
-
 #bg-hero div,
 #pos-fixed .wrapper,
 nav,
@@ -307,18 +312,15 @@ nav,
         text-align: center;
        
 }
-
 @media screen and (min-width:768px) {
         #pos-fixed .wrapper,
         #benefits .row :last-child {
                 text-align: left;
-        }
-          
+        }     
 }
 @media screen and (min-width:1024px) {
           
 }
-
 /* ----- NAV ----- */
 nav {
         padding: 0;
@@ -332,76 +334,23 @@ footer ul {
         margin-top: 2em;
 }
 li {
-        padding-left: 5px;
+        margin-left: 5px;
         display: inline-block;
         font-family: 'Open Sans', sans-serif;
 }
 footer li {
         display: block;
         margin-top: 1em;
-
 }
 
- a:hover {
-        padding: 5px;
-        background-color: #FFD8DB;
-        border-radius: 20px;
-}
-a {
-        padding: 5px;
-        color: #00B0A3;
-        text-decoration: none;
-}
-a:hover {
-        color: #00515D;
-}
 @media screen and (min-width:768px) {
         nav{
                 text-align: right;
         }     
 }
-
 @media screen and (min-width:1024px) {
-          
+      
 }
-
-
-
-
-/* ----- SYSTEMS ----- */
-#systems {
-        margin: 2em 0em 4em 0em;
-}
-#systems .row:last-child section {
-        align-content: flex-start;
-}
-#systems .row:last-child section h3{
-        margin-bottom: .5em;
-}
-#systems .col-md-8 {
-        margin-bottom: 1em;
-}
-@media screen and (min-width:768px) {
-        #systems{
-                text-align: center;
-        }
-        #testing .bg-image {
-                background: url(../img/rainbows@2x.jpg)  no-repeat center;
-                -o-background-siz: cover;
-                -ms-background-siz: cover;
-                -webkit-background-siz: cover;
-                -moz-background-siz: cover;
-                background-size: cover;
-
-                background-clip: content-box;
-        }
-          
-}
-@media screen and (min-width:1024px) {
-          
-}
-
-
 /* ----- header-hero ----- */
 #pos-fixed {
         position: fixed;
@@ -410,6 +359,9 @@ a:hover {
         background-color: #FFF;
         border-bottom: 5px solid #FFD8DB;
         width: 100%;
+}
+#pos-fixed .wrapper {
+        margin-bottom: 10px;
 }
 #pos-fixed + div {
         background-color: #FFD8DB;
@@ -427,16 +379,44 @@ img {
         }
         #bg-hero {
                 margin-top: 5em;
-        }
-          
+        }   
 }
 @media screen and (min-width:1024px) {
         #pos-fixed > .row:first-child {
                 align-items: center;
         }  
 }
+/* ----- SYSTEMS ----- */
+#systems {
+        margin: 2em 0em 4em 0em;
+}
+#systems section {
+        align-content: flex-start;
+}
+#systems section h3{
+        margin-bottom: .5em;
+}
+#systems .col-md-8 {
+        margin-bottom: 1em;
+}
+@media screen and (min-width:768px) {
+        #systems{
+                text-align: center;
+        }
+        #testing > div:first-child {
+                background: url(../img/rainbows.jpg)  no-repeat center;
+                -o-background-siz: cover;
+                -ms-background-siz: cover;
+                -webkit-background-siz: cover;
+                -moz-background-siz: cover;
+                background-size: cover;
 
-
+                background-clip: content-box;
+        }    
+}
+@media screen and (min-width:1024px) {
+          
+}
 
 /* ----- Layout ----- */
 #layout > section:first-child {
@@ -449,11 +429,14 @@ img {
 #layout .row:last-child section {
         margin-top: 2em;
 }
+#layout section:first-child h2 
+{
+        font-size: 1.8em;
+}
 @media screen and (min-width:768px) {
           
 }
-@media screen and (min-width:1024px) {
-        
+@media screen and (min-width:1024px) { 
         #layout > section:first-child {
                 order: 1;
         }
@@ -462,31 +445,20 @@ img {
                 margin-bottom: 0em;
         }
 }
-
-
-
 /* ----- Testing ----- */
-@media screen and (min-width:768px) {
-        
+@media screen and (min-width:768px) { 
         #testing .col-lg-12:first-child {
                 display: block;
-        }
-          
+        }    
 }
 @media screen and (min-width:1024px) {
           
 }
-
-
-
 /* ----- Benenfits ----- */
 #benefits {
         margin-bottom: 2em;
 }
-[class*="fa"] {
-        padding: 0px;
-        font-size: xx-large;
-}
+
 #benefits > header:first-child {
         margin: 0 auto 2em auto;
 }
@@ -499,32 +471,42 @@ img {
 }
 @media screen and (min-width:1024px) {
         #benefits > header:first-child {
-                margin: 0 auto 4em auto;
+                margin: 0 auto 1em auto;
+        }
+        #benefits [class*="col-"] .col-md-2 {
+                text-align: right;
         }
           
 } 
-
-
-        /* FOOTER */
+        /* ------FOOTER------- */
 footer {
         border-top: 5px solid #FFD8DB;
+        margin-bottom: 3em;
 }
-footer .col-sm-4, footer .col-sm-8 {
+footer .col-sm-5, 
+footer .col-sm-8 {
         margin: 0 auto;
 }
 footer nav,
+footer .col-sm-5, 
 footer h4,
 footer p {
         text-align: center;
 }
+footer .col-sm-5 {
+        padding-top: 2em;
+}
 @media screen and (min-width:768px) {
-          
+        footer {
+                text-align: center;
+        }
 }
 @media screen and (min-width:1024px) {
           
         footer .wrapper {
                 display: flex;
                 justify-content: flex-start;
+                text-align: left;
         }
         footer nav {
                 order: 1;
@@ -534,41 +516,36 @@ footer p {
         footer p {
                 text-align: left;
         }
+        /* footer li {
+                padding: 0;
+        } */
 }    
-
-
-
-
-
 /*--
 /*--------------------------------------------------------------
     7.0 - UTILITY
 -------------------------------------------------------------- */
-
 /* ----- content ----- */
 .col-center {
         justify-content: center;
 }
-
-
 #bg-hero div:first-child {
-        background: url(../img/balloons.jpg) no-repeat;
+        background: url(../img/balloons.jpg) left no-repeat;
         -o-background-siz: contain;
         -ms-background-siz: contain;
         -webkit-background-siz: contain;
         -moz-background-siz: contain;
         background-size: contain;
 }
-
+[class*="fa"] {
+        padding: 0px;
+        font-size: xx-large;
+}
 @media screen and (min-width:1024px){
         [class*="fa"] {
                 font-size: 42px;
         } 
+
 }
-
   /* ----- COLOR ----- */
-
-
-  /* ----- UNIVERSAL ----- */
 
  
