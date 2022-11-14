@@ -71,45 +71,11 @@ html {
     4.0 - ELEMENTS
 -------------------------------------------------------------- */
 /* ----- NAV ----- */ 
-nav {
-        text-align: center;
-        padding: 0;
-}
-ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-}
-footer ul {
-        margin-top: 2em;
-}
-li {
-        padding-left: 5px;
-        display: inline-block;
-        font-family: 'Open Sans', sans-serif;
-}
-footer li {
-        display: block;
-        margin-top: 1em;
 
-}
-
- a:hover {
-        padding: 5px;
-        background-color: #FFD8DB;
-        border-radius: 20px;
-}
-a {
-        padding: 5px;
-        color: #00B0A3;
-        text-decoration: none;
-}
-a:hover {
-        color: #00515D;
-}
 
 
 /* ----- TYPOGRAPHY ----- */ 
+
 img {
         padding: 0;
 }
@@ -136,7 +102,6 @@ h3 {
         margin: 0 0 0.2em 0;
 }
 h4 {
-        /* font-size: .8rem; */
         font-family: 'Open Sans', sans-serif;
         color: #00515D;
         margin: 0;
@@ -151,16 +116,7 @@ p+p {
 
 
 @media screen and (min-width:768px) {
-        nav{
-                text-align: right;
-        }
-        footer nav,
-        footer h4,
-        footer p {
-                text-align: center;
-        }
-       
-        
+
 }
 
 @media screen and (min-width:1024px){
@@ -198,6 +154,10 @@ p+p {
 }
 [class*="col-"] {
         padding: .5em .5em ;
+}
+[class*="col-"] [class*="col-"] {
+        margin-left: -.5em;
+        margin-right: -.5em;
 }
 
 
@@ -333,13 +293,80 @@ p+p {
 /*--------------------------------------------------------------
     6.0 - COMPONENTS
 -------------------------------------------------------------- */
+/* ----- Grouped ----- */
+#layout,
+#testing {
+        margin-bottom: 4em;
+}
+
+#bg-hero div,
+#pos-fixed .wrapper,
+nav,
+#layout > section:first-child,
+#benefits {
+        text-align: center;
+       
+}
+
+@media screen and (min-width:768px) {
+        #pos-fixed .wrapper,
+        #benefits .row :last-child {
+                text-align: left;
+        }
+          
+}
+@media screen and (min-width:1024px) {
+          
+}
 
 /* ----- NAV ----- */
+nav {
+        padding: 0;
+}
+ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
+footer ul {
+        margin-top: 2em;
+}
+li {
+        padding-left: 5px;
+        display: inline-block;
+        font-family: 'Open Sans', sans-serif;
+}
+footer li {
+        display: block;
+        margin-top: 1em;
+
+}
+
+ a:hover {
+        padding: 5px;
+        background-color: #FFD8DB;
+        border-radius: 20px;
+}
+a {
+        padding: 5px;
+        color: #00B0A3;
+        text-decoration: none;
+}
+a:hover {
+        color: #00515D;
+}
+@media screen and (min-width:768px) {
+        nav{
+                text-align: right;
+        }     
+}
+
+@media screen and (min-width:1024px) {
+          
+}
 
 
 
-
-/* ----- CONTENT ----- */
 
 /* ----- SYSTEMS ----- */
 #systems {
@@ -354,73 +381,129 @@ p+p {
 #systems .col-md-8 {
         margin-bottom: 1em;
 }
+@media screen and (min-width:768px) {
+        #systems{
+                text-align: center;
+        }
+        #testing .bg-image {
+                background: url(../img/rainbows@2x.jpg)  no-repeat center;
+                -o-background-siz: cover;
+                -ms-background-siz: cover;
+                -webkit-background-siz: cover;
+                -moz-background-siz: cover;
+                background-size: cover;
+
+                background-clip: content-box;
+        }
+          
+}
+@media screen and (min-width:1024px) {
+          
+}
+
+
 /* ----- header-hero ----- */
 #pos-fixed {
         position: fixed;
         top: 0;
         left: 0;
         background-color: #FFF;
-        margin-bottom: 1px;
         border-bottom: 5px solid #FFD8DB;
         width: 100%;
 }
 #pos-fixed + div {
         background-color: #FFD8DB;
-
+        padding-top: 8em;
 }
-#pos-fixed .row {
-        text-align: center;
-}
-#bg-image p {
+#bg-hero div p {
         padding-bottom: 6em;
-        /* font-size: 1.2em; */
 }
-#bg-image {
-        text-align: center;
-        margin-top: 9em;
+img {
+        width: 120px;
 }
+@media screen and (min-width:768px) {
+        #pos-fixed + div {
+                padding-top: 2em;
+        }
+        #bg-hero {
+                margin-top: 5em;
+        }
+          
+}
+@media screen and (min-width:1024px) {
+        #pos-fixed > .row:first-child {
+                align-items: center;
+        }  
+}
+
+
+
 /* ----- Layout ----- */
-#layout {
-        margin-bottom: 4em;
-}
 #layout > section:first-child {
         flex-direction: column;
         justify-content: center;
         background-color: #FFD8DB;
-        text-align: center;
         padding: 2em;
         margin-bottom: 8em;
 }
 #layout .row:last-child section {
         margin-top: 2em;
 }
+@media screen and (min-width:768px) {
+          
+}
+@media screen and (min-width:1024px) {
+        
+        #layout > section:first-child {
+                order: 1;
+        }
+        #layout > section:first-child {
+                padding: 0em 2em;
+                margin-bottom: 0em;
+        }
+}
+
+
 
 /* ----- Testing ----- */
-#testing {
-        margin-bottom: 4em;
+@media screen and (min-width:768px) {
+        
+        #testing .col-lg-12:first-child {
+                display: block;
+        }
+          
 }
-#testing .col-lg-12:first-child {
-        display: none;
+@media screen and (min-width:1024px) {
+          
 }
-#testing .bg-image {
-        background: url(../img/rainbows@2x.jpg)  no-repeat center;
-        -o-background-siz: contain;
-        -ms-background-siz: contain;
-        -webkit-background-siz: contain;
-        -moz-background-siz: contain;
-        background-size: contain;
-}
+
+
+
 /* ----- Benenfits ----- */
 #benefits {
         margin-bottom: 2em;
-}
-#benefits {
-        text-align: center;
 }
 [class*="fa"] {
         padding: 0px;
         font-size: xx-large;
 }
+#benefits > header:first-child {
+        margin: 0 auto 2em auto;
+}
+
+@media screen and (min-width:768px) {
+        #benefits h3 {
+                margin: 0px;
+        }
+          
+}
+@media screen and (min-width:1024px) {
+        #benefits > header:first-child {
+                margin: 0 auto 4em auto;
+        }
+          
+} 
+
 
         /* FOOTER */
 footer {
@@ -429,48 +512,16 @@ footer {
 footer .col-sm-4, footer .col-sm-8 {
         margin: 0 auto;
 }
-        
-
-
-@media screen and (min-width:768px) {
-        #pos-fixed .wrapper {
-                text-align: left;
-        }
-        #systems{
-                text-align: center;
-        }
-        #testing .col-lg-12:first-child {
-                display: block;
-        }
-        #benefits .row :last-child {
-                text-align: left;
-        }
-        #benefits h3 {
-                margin: 0px;
-        }
-        #bg-image {
-                margin-top: 5em;
-        }
-
+footer nav,
+footer h4,
+footer p {
+        text-align: center;
 }
-
-@media screen and (min-width:1024px){
-        #pos-fixed > .row:first-child {
-                align-items: center;
-        }
-        #layout > section:first-child {
-                order: 1;
-        }
-        #benefits header:first-child {
-                margin: 0 auto;
-        }
-        #layout > section:first-child {
-                padding: 0em 2em;
-                margin-bottom: 0em;
-        }
-        [class*="fa"] {
-                font-size: 42px;
-            }
+@media screen and (min-width:768px) {
+          
+}
+@media screen and (min-width:1024px) {
+          
         footer .wrapper {
                 display: flex;
                 justify-content: flex-start;
@@ -478,25 +529,41 @@ footer .col-sm-4, footer .col-sm-8 {
         footer nav {
                 order: 1;
         }
-}
+        footer nav,
+        footer h4,
+        footer p {
+                text-align: left;
+        }
+}    
+
+
+
+
+
 /*--
 /*--------------------------------------------------------------
     7.0 - UTILITY
 -------------------------------------------------------------- */
 
-/* ----- SCREENREADER ----- */
+/* ----- content ----- */
 .col-center {
         justify-content: center;
 }
 
 
-#bg-image {
+#bg-hero div:first-child {
         background: url(../img/balloons.jpg) no-repeat;
         -o-background-siz: contain;
         -ms-background-siz: contain;
         -webkit-background-siz: contain;
         -moz-background-siz: contain;
         background-size: contain;
+}
+
+@media screen and (min-width:1024px){
+        [class*="fa"] {
+                font-size: 42px;
+        } 
 }
 
   /* ----- COLOR ----- */
