@@ -48,9 +48,7 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
 }
-html {                  /* Font-Shorthand */
-        /* font-size: 1rem;
-        font-family: 'Roboto Slab', serif; */
+html {                  
         color: #00515D;
         font: 1rem 'Roboto Slab', serif;
 }
@@ -78,28 +76,21 @@ html {                  /* Font-Shorthand */
 
 
 /* ----- TYPOGRAPHY ----- */ 
-img {
-        padding: 0;
-}
 h1 {
-        font-size: 4rem;
-        font-family: 'Pacifico', cursive;
+        font: 4rem 'Pacifico', cursive;
         font-weight: 200;
         margin: 0;
         color: #00B0A3;
-        padding-top: 2em;
+        padding-top: 1em;
         margin-bottom: 0.2em;
 }
 h2 {
-        font-size: 2.5rem;
-        font-family: 'Pacifico', cursive; 
+        font: 2.5rem 'Pacifico', cursive; 
         color: #00B0A3;
         margin: 0 0 .5em 0;
-        /* font-weight: lighter;   */
 }
 h3 {
-        font-size: 1.5rem;
-        font-family: 'Roboto Slab', serif;
+        font: 1.5rem 'Roboto Slab', serif;
         color: #00B0A3;
         margin: 0 0 0.2em 0;
 }
@@ -115,9 +106,6 @@ p {
 p+p {
         margin-top: 2em;
 }
-@media screen and (min-width:768px) {
-
-}
 @media screen and (min-width:1024px){
         h1 {
                 font-size: 5em;
@@ -130,16 +118,16 @@ p+p {
 
 
 /* ----- ANCHOR ----- */
-a:hover { /* -----Move below non hover----- */
-        padding: 5px;
-        background-color: #FFD8DB;
-        border-radius: 20px;
-        color: #00515D;
-}
+
 a {
         padding: 5px;
         color: #00B0A3;
         text-decoration: none;
+}
+a:hover { /* -----Move below non hover----- */
+        padding: 5px;
+        border-radius: 20px;
+        color: #00515D;
 }
 /*--------------------------------------------------------------
     5.0 - OBJECTS
@@ -308,48 +296,40 @@ a {
 #nav-bar .wrapper,
 nav,
 #layout > section:first-child,
-#benefits {
+#benefits,
+footer {
         text-align: center;
        
 }
+nav,
+ul,
+img,
+[class*="fa"] {
+        padding: 0;
+}
+#nav-bar + div,
+a:hover,
+#nav-bar + div,
+#layout > section:first-child {
+        background-color: #FFD8DB;
+}
+
 @media screen and (min-width:768px) {
         #nav-bar .wrapper,
         #benefits .row:last-child {
                 text-align: left;
         }     
 }
-@media screen and (min-width:1024px) {
-          
-}
+
 /* ----- NAV ----- */
-nav {
-        padding: 0;
-}
 ul {
         list-style: none;
-        padding: 0;
         margin: 0;
 }
-footer ul { /* ----- GO TO FOOTER STYLES!!! ----- */
-        margin-top: 2em;
-}
-li {
-        margin-left: 5px;
-        display: inline-block;
-        font-family: 'Open Sans', sans-serif;
-}
-footer li {
-        display: block;
-        margin-top: 1em;
-}
-
 @media screen and (min-width:768px) {
         nav{
                 text-align: right;
         }     
-}
-@media screen and (min-width:1024px) {
-      
 }
 /* ----- header-hero ----- */
 #nav-bar {
@@ -364,14 +344,14 @@ footer li {
         margin-bottom: 10px;
 }
 #nav-bar + div {
-        background-color: #FFD8DB;
         padding-top: 8em;
 }
-#bg-hero div {
-        padding-bottom: 6em;
+h1 + div {
+        padding-bottom: 3em;
 }
 img {
         width: 120px;
+        height: auto;
 }
 #bg-hero div:first-child {
         background: url(../img/balloons.jpg) left no-repeat;
@@ -411,6 +391,9 @@ img {
         #systems{
                 text-align: center;
         }
+         
+}
+@media screen and (min-width:1024px) {
         #testing > div:first-child {
                 background: url(../img/rainbows.jpg)  no-repeat center;
                 -o-background-siz: cover;
@@ -420,17 +403,14 @@ img {
                 background-size: cover;
 
                 background-clip: content-box;
-        }    
-}
-@media screen and (min-width:1024px) {
-          
+        }  
+
 }
 
 /* ----- Layout ----- */
 #layout > section:first-child {
         flex-direction: column;
         justify-content: center;
-        background-color: #FFD8DB;
         padding: 2em;
         margin-bottom: 8em;
 }
@@ -454,14 +434,14 @@ img {
         }
 }
 /* ----- Testing ----- */
+
+
 @media screen and (min-width:768px) { 
         #testing .col-lg-12:first-child {
                 display: block;
         }    
 }
-@media screen and (min-width:1024px) {
-          
-}
+
 /* ----- Benenfits ----- */
 #benefits {
         margin-bottom: 2em;
@@ -474,8 +454,7 @@ img {
 @media screen and (min-width:768px) {
         #benefits h3 {
                 margin: 0px;
-        }
-          
+        }  
 }
 @media screen and (min-width:1024px) {
         #benefits > header:first-child {
@@ -483,23 +462,27 @@ img {
         }
         #benefits [class*="col-"] .col-md-2 {
                 text-align: right;
-        }
-          
+        }     
 } 
         /* ------FOOTER------- */
 footer {
         border-top: 5px solid #FFD8DB;
         margin-bottom: 3em;
 }
-footer .col-sm-5, 
-footer .col-sm-8 {
-        margin: 0 auto;
-}
-footer {
-        text-align: center;
-}
-footer .col-sm-5 {
+footer .col-lg-5 {
         padding-top: 2em;
+}
+footer ul { 
+        margin-top: 2em;
+}
+li {
+        margin-left: 5px;
+        display: inline-block;
+        font-family: 'Open Sans', sans-serif;
+}
+footer li {
+        display: block;
+        margin-top: 1em;
 }
 @media screen and (min-width:768px) {
         footer {
@@ -515,15 +498,10 @@ footer .col-sm-5 {
         }
         footer nav {
                 order: 1;
-        }
-        footer {
                 text-align: left;
         }
-        /* footer li {
-                padding: 0;
-        } */
+       
 }    
-/*--
 /*--------------------------------------------------------------
     7.0 - UTILITY
 -------------------------------------------------------------- */
@@ -533,7 +511,6 @@ footer .col-sm-5 {
 }
 
 [class*="fa"] {
-        padding: 0px;
         font-size: xx-large;
 }
 @media screen and (min-width:1024px){
@@ -542,6 +519,5 @@ footer .col-sm-5 {
         } 
 
 }
-  /* ----- COLOR ----- */
 
  
