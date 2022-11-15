@@ -122,7 +122,7 @@ p+p {
         h1 {
                 font-size: 5em;
         }
-        h1 + div p {
+        h1 + div {
                 font-size: 1.2em;
         }
 }
@@ -130,7 +130,7 @@ p+p {
 
 
 /* ----- ANCHOR ----- */
-a:hover {
+a:hover { /* -----Move below non hover----- */
         padding: 5px;
         background-color: #FFD8DB;
         border-radius: 20px;
@@ -305,7 +305,7 @@ a {
         margin-bottom: 4em;
 }
 #bg-hero div,
-#pos-fixed .wrapper,
+#nav-bar .wrapper,
 nav,
 #layout > section:first-child,
 #benefits {
@@ -313,8 +313,8 @@ nav,
        
 }
 @media screen and (min-width:768px) {
-        #pos-fixed .wrapper,
-        #benefits .row :last-child {
+        #nav-bar .wrapper,
+        #benefits .row:last-child {
                 text-align: left;
         }     
 }
@@ -330,7 +330,7 @@ ul {
         padding: 0;
         margin: 0;
 }
-footer ul {
+footer ul { /* ----- GO TO FOOTER STYLES!!! ----- */
         margin-top: 2em;
 }
 li {
@@ -352,7 +352,7 @@ footer li {
       
 }
 /* ----- header-hero ----- */
-#pos-fixed {
+#nav-bar {
         position: fixed;
         top: 0;
         left: 0;
@@ -360,21 +360,29 @@ footer li {
         border-bottom: 5px solid #FFD8DB;
         width: 100%;
 }
-#pos-fixed .wrapper {
+#nav-bar .wrapper {
         margin-bottom: 10px;
 }
-#pos-fixed + div {
+#nav-bar + div {
         background-color: #FFD8DB;
         padding-top: 8em;
 }
-#bg-hero div p {
+#bg-hero div {
         padding-bottom: 6em;
 }
 img {
         width: 120px;
 }
+#bg-hero div:first-child {
+        background: url(../img/balloons.jpg) left no-repeat;
+        -o-background-siz: contain;
+        -ms-background-siz: contain;
+        -webkit-background-siz: contain;
+        -moz-background-siz: contain;
+        background-size: contain;
+}
 @media screen and (min-width:768px) {
-        #pos-fixed + div {
+        #nav-bar + div {
                 padding-top: 2em;
         }
         #bg-hero {
@@ -382,13 +390,13 @@ img {
         }   
 }
 @media screen and (min-width:1024px) {
-        #pos-fixed > .row:first-child {
+        #nav-bar > .row:first-child {
                 align-items: center;
         }  
 }
 /* ----- SYSTEMS ----- */
 #systems {
-        margin: 2em 0em 4em 0em;
+        margin: 2em 0em 4em;
 }
 #systems section {
         align-content: flex-start;
@@ -487,10 +495,7 @@ footer .col-sm-5,
 footer .col-sm-8 {
         margin: 0 auto;
 }
-footer nav,
-footer .col-sm-5, 
-footer h4,
-footer p {
+footer {
         text-align: center;
 }
 footer .col-sm-5 {
@@ -511,9 +516,7 @@ footer .col-sm-5 {
         footer nav {
                 order: 1;
         }
-        footer nav,
-        footer h4,
-        footer p {
+        footer {
                 text-align: left;
         }
         /* footer li {
@@ -528,14 +531,7 @@ footer .col-sm-5 {
 .col-center {
         justify-content: center;
 }
-#bg-hero div:first-child {
-        background: url(../img/balloons.jpg) left no-repeat;
-        -o-background-siz: contain;
-        -ms-background-siz: contain;
-        -webkit-background-siz: contain;
-        -moz-background-siz: contain;
-        background-size: contain;
-}
+
 [class*="fa"] {
         padding: 0px;
         font-size: xx-large;
