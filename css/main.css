@@ -21,7 +21,7 @@
         -- Benefits 
         -- Footer
 7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
-        - Screen Reader
+        - Content
 --------------------------------------------------------------*/
 
 
@@ -53,17 +53,6 @@ html {
         font: 1rem 'Roboto Slab', serif;
 }
 
-/* @media screen and (min-width:768px) {
-        html {
-        
-        }    
-}
-
-@media screen and (min-width:1024px) {
-        html {
-        
-        }
-} */
 
 /*--------------------------------------------------------------
     4.0 - ELEMENTS
@@ -290,10 +279,7 @@ a:hover { /* -----Move below non hover----- */
     6.0 - COMPONENTS
 -------------------------------------------------------------- */
 /* ----- Grouped ----- */
-/* #layout,
-#testing {
-        margin-bottom: 4em;
-} */
+
 #bg-hero div,
 #nav-bar,
 #layout > section:first-child,
@@ -442,9 +428,7 @@ img {
 #layout section:first-child h2 {
         font-size: 2rem;
 }
-@media screen and (min-width:768px) {
-          
-}
+
 @media screen and (min-width:1024px) { 
         #layout > section:first-child {
                 order: 1;
@@ -511,12 +495,7 @@ footer li {
                 text-align: left;
         }
 }
-@media screen and (min-width:1024px) {
-          
-        
-       
-       
-}    
+  
 /*--------------------------------------------------------------
     7.0 - UTILITY
 -------------------------------------------------------------- */
