@@ -53,7 +53,7 @@ html {
         font: 1rem 'Roboto Slab', serif;
 }
 
-@media screen and (min-width:768px) {
+/* @media screen and (min-width:768px) {
         html {
         
         }    
@@ -63,7 +63,7 @@ html {
         html {
         
         }
-}
+} */
 
 /*--------------------------------------------------------------
     4.0 - ELEMENTS
@@ -78,7 +78,7 @@ html {
 /* ----- TYPOGRAPHY ----- */ 
 h1 {
         font: 4rem 'Pacifico', cursive;
-        font-weight: 200;
+        font-weight: 200; /* Fontweight can go into short hand */
         margin: 0;
         color: #00B0A3;
         padding-top: 1em;
@@ -93,6 +93,7 @@ h3 {
         font: 1.5rem 'Roboto Slab', serif;
         color: #00B0A3;
         margin: 0 0 0.2em 0;
+        font-weight: 600;
 }
 h4 {
         font-family: 'Open Sans', sans-serif;
@@ -125,9 +126,10 @@ a {
         text-decoration: none;
 }
 a:hover { /* -----Move below non hover----- */
-        padding: 5px;
+        
         border-radius: 20px;
         color: #00515D;
+        background-color: #FFD8DB;
 }
 /*--------------------------------------------------------------
     5.0 - OBJECTS
@@ -288,13 +290,12 @@ a:hover { /* -----Move below non hover----- */
     6.0 - COMPONENTS
 -------------------------------------------------------------- */
 /* ----- Grouped ----- */
-#layout,
+/* #layout,
 #testing {
         margin-bottom: 4em;
-}
+} */
 #bg-hero div,
-#nav-bar .wrapper,
-nav,
+#nav-bar,
 #layout > section:first-child,
 #benefits,
 footer {
@@ -308,23 +309,40 @@ img,
         padding: 0;
 }
 #nav-bar + div,
-a:hover,
 #nav-bar + div,
 #layout > section:first-child {
         background-color: #FFD8DB;
+}
+#layout,
+#testing,
+#systems,
+#benefits {
+        padding-top: 5em;
 }
 
 @media screen and (min-width:768px) {
         #nav-bar .wrapper,
         #benefits .row:last-child {
                 text-align: left;
-        }     
+        }   
+        #layout,
+        #testing,
+        #systems,
+        #benefits {
+                padding-top: 7em;
+        }  
 }
+
 
 /* ----- NAV ----- */
 ul {
         list-style: none;
         margin: 0;
+}
+li { 
+       
+        display: inline-block;
+        font-family: 'Open Sans', sans-serif;
 }
 @media screen and (min-width:768px) {
         nav{
@@ -332,6 +350,9 @@ ul {
         }     
 }
 /* ----- header-hero ----- */
+#bg-hero .col-lg-5 {
+        margin: 0 auto;
+}
 #nav-bar {
         position: fixed;
         top: 0;
@@ -370,14 +391,11 @@ img {
         }   
 }
 @media screen and (min-width:1024px) {
-        #nav-bar > .row:first-child {
+        #nav-bar > .row {
                 align-items: center;
         }  
 }
 /* ----- SYSTEMS ----- */
-#systems {
-        margin: 2em 0em 4em;
-}
 #systems section {
         align-content: flex-start;
 }
@@ -402,7 +420,11 @@ img {
                 -moz-background-siz: cover;
                 background-size: cover;
 
-                background-clip: content-box;
+                -o-background-clip: content-box;
+                -ms-background-clip: content-box;
+                -webkit-background-clip: content-box;
+                -moz-background-clip: content-box;
+                background-clip: content-box; /* CSS three need vector prefixes */
         }  
 
 }
@@ -417,9 +439,8 @@ img {
 #layout .row:last-child section {
         margin-top: 2em;
 }
-#layout section:first-child h2 
-{
-        font-size: 1.8em;
+#layout section:first-child h2 {
+        font-size: 2rem;
 }
 @media screen and (min-width:768px) {
           
@@ -475,31 +496,25 @@ footer .col-lg-5 {
 footer ul { 
         margin-top: 2em;
 }
-li {
-        margin-left: 5px;
-        display: inline-block;
-        font-family: 'Open Sans', sans-serif;
-}
+
 footer li {
         display: block;
         margin-top: 1em;
 }
 @media screen and (min-width:768px) {
-        footer {
-                text-align: center;
-        }
-}
-@media screen and (min-width:1024px) {
-          
-        footer .wrapper {
-                display: flex;
-                justify-content: flex-start;
-                text-align: left;
-        }
         footer nav {
                 order: 1;
                 text-align: left;
         }
+        footer .wrapper {
+                justify-content: flex-start;
+                text-align: left;
+        }
+}
+@media screen and (min-width:1024px) {
+          
+        
+       
        
 }    
 /*--------------------------------------------------------------
